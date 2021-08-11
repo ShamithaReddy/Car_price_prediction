@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name='viewport' content='width=device-width',initial-scale=1.0>
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style.css') }}">
+        <title>Car price prediction</title>
+
+    </head>
+    <body>
+        <div>
+            <form action="{{ url_for('predict') }}" method='POST'>
+                <h2>Predictive analysis</h2>
+                <h3>Year</h3>
+                <input id='first' name='year' type='number'>
+                <h3>What is the present price of Car (In Lakhs)</h3>
+                <input id='second' name='present_price' type='number' required='required'>
+                <h3>What are the no.of Kilometers driven?</h3>
+                <input id='third' name='kms_driven' required='required'>
+                <h3>No.of owners the car had? E.g:(0 or 1 or 2)</h3>
+                <input id='forth' name='owners' required='required'>
+                <h3>What is the Fuel Type?</h3>
+                <select name='fuel_type_petrol' id='fuel' required='required'>
+                    <option value='Petrol'>Petrol</option>
+                    <option value='Diesel'>Diesel</option>
+                    <option value='CNG'>CNG</option>
+                </select>
+                <h3>Are you a dealer or a Individual?</h3>
+                <select name='seller_type_individual' id='seller' required='required'>
+                    <option value="Dealer">Dealer</option>
+                    <option value="Individual">Individual</option>
+                </select>
+                <h3>Transmission Type</h3>
+                <select name='transmission_manual' id='transmission' required='required'>
+                    <option value='Manual'>Manual Car</option>
+                    <option value='Automatic'>Automatic Car</option>
+
+                </select>
+                <br>
+                <br>
+                <button id='button' type='submit'><b>Calculate the selling price</b></button>
+            </form>
+
+        </div>
+
+    </body>
+</html>
